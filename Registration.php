@@ -9,14 +9,14 @@
         $password = $_POST["password"];
         $gender = $_POST["gender"];
         
-      INSERT INTO 
-      Registration (`registration_id`, `first_name`, `last_name`, `address`, ` contact_number`, `email_address`, `password`, `gender`) 
-      VALUES ('', '$first_name', '$last_name', '$address', '$contact_number', '$email_address', '$password', '$gender');
+      $sql= "INSERT INTO 
+      'Registration' (`registration_id`, `first_name`, `last_name`, `address`, ` contact_number`, `email_address`, `password`, `gender`) 
+      VALUES (NULL, '$first_name', '$last_name', '$address', '$contact_number', '$email_address', '$password', '$gender');";
 
        require "connection.php";
 
         if ($conn->query($sql) === TRUE) {
-        echo "New record created successfully";
+        echo "Registration successfull";
         } else {
         echo "Error: " . $sql . "<br>" . $conn->error;
         }
@@ -44,16 +44,16 @@
  <form action = "Registration.php" method = "POST"> 
 
     First Name
-    <input required type="text" name="firstname"><br><br>
+    <input required type="text" name="first_name"><br><br>
 
     Last Name
-    <input required type="text" name="lastname"><br><br>
+    <input required type="text" name="last_name"><br><br>
 
     Address
     <input required type="text" name="address"><br><br>
 
     Contact Number
-    <input required type="text" name="contact"><br><br>
+    <input required type="text" name="contact_number"><br><br>
 
     Email Address
     <input required type="text" name="email_address"><br><br>
