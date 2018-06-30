@@ -1,6 +1,6 @@
 
 <?php 
-    /* if (isset($_POST['register'])) {
+     if (isset($_POST['register'])) {
         $first_name = $_POST["first_name"];
         $last_name = $_POST["last_name"];
         $address = $_POST["address"];
@@ -9,9 +9,11 @@
         $password = $_POST["password"];
         $gender = $_POST["gender"];
         
+      INSERT INTO 
+      Registration (`registration_id`, `first_name`, `last_name`, `address`, ` contact_number`, `email_address`, `password`, `gender`) 
+      VALUES ('', '$first_name', '$last_name', '$address', '$contact_number', '$email_address', '$password', '$gender');
 
        require "connection.php";
-
 
         if ($conn->query($sql) === TRUE) {
         echo "New record created successfully";
@@ -22,13 +24,6 @@
             $conn->close();
 
     }
- 
-    $errors = array();
-
-      if( strcmp($password, $confirm_password) != 0 ) {
-            array_push($errors, "Passwords do not match");
-        }*/
-
 
  ?> 
 
@@ -46,7 +41,7 @@
         <h3> Welcome to Registration!</h3>
 
 
- <form action = "registration.php" method = "POST"> 
+ <form action = "Registration.php" method = "POST"> 
 
     First Name
     <input required type="text" name="firstname"><br><br>
@@ -61,7 +56,7 @@
     <input required type="text" name="contact"><br><br>
 
     Email Address
-    <input required type="text" name="email"><br><br>
+    <input required type="text" name="email_address"><br><br>
 
     Password
     <input required type="password" name="password"><br><br>
@@ -73,9 +68,11 @@
     <input required type="radio" name="gender"
     <?php if (isset($gender) && $gender=="female") echo "checked";?>
     value="female">Female
+
     <input type="radio" name="gender"
      <?php if (isset($gender) && $gender=="male") echo "checked";?>
     value="male">Male
+
     <input type="radio" name="gender"
      <?php if (isset($gender) && $gender=="other") echo "checked";?>
     value="other">Other<br><br>
