@@ -11,12 +11,12 @@
         
       $sql= "INSERT INTO 
       'Registration' (`registration_id`, `first_name`, `last_name`, `address`, ` contact_number`, `email_address`, `password`, `gender`) 
-      VALUES (NULL, '$first_name', '$last_name', '$address', '$contact_number', '$email_address', '$password', '$gender');";
+      VALUES (NULL, '$first_name', '$last_name', '$address', '$contact_number', '$email_address', '$password', '$gender')";
 
        require "connection.php";
 
         if ($conn->query($sql) === TRUE) {
-        echo "Registration successfull";
+        echo "Registration successfull" "<br>";
         } else {
         echo "Error: " . $sql . "<br>" . $conn->error;
         }
