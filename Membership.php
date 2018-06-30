@@ -1,4 +1,16 @@
-Are you 18 years old or over? 
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+    <div>
+        <h2>  </h2>
+        <h4> </h4>
+
+
+        Are you 18 years old or over? 
     <input required type="radio" name="age"
     <?php if (isset($age) && $age=="yes") echo "checked";?>
     value="yes">Yes
@@ -25,3 +37,10 @@ Would you like a Personal Trainer?<br>
     value="no">No<br><br>
 
     
+        
+    </div>
+
+</body>
+</html>
+
+
