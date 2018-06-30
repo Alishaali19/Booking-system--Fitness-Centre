@@ -23,3 +23,5 @@ Would you like a Personal Trainer?<br>
     <input type="radio" name="personal trainer"
      <?php if (isset($personal_trainer) && $personal_trainer=="no") echo "checked";?>
     value="no">No<br><br>
+
+    
