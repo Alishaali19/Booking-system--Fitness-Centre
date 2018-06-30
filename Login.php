@@ -5,7 +5,7 @@
 </head>
 <body>
 
-
+<center>
 <div >
 
 
@@ -35,7 +35,7 @@
 </form>
 	
 </div>
-
+</center>
 </body>
 </html>
 
