@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title></title>
+    <title>Membership</title>
 </head>
 <body>
     <center>
