@@ -1,5 +1,7 @@
 
 <?php 
+    $conn = new mysqli($servername, $username, $password, $dbname);
+
      if (isset($_POST['register'])) {
         $first_name = $_POST["first_name"];
         $last_name = $_POST["last_name"];
@@ -9,9 +11,9 @@
         $password = $_POST["password"];
         $gender = $_POST["gender"];
         
-      $sql= "INSERT INTO 
-      'Registration' (`registration_id`, `first_name`, `last_name`, `address`, ` contact_number`, `email_address`, `password`, `gender`) 
-      VALUES (NULL, '$first_name', '$last_name', '$address', '$contact_number', '$email_address', '$password', '$gender')";
+
+      $sql= INSERT INTO 
+      'registration' (`registration_id`, `first_name`, `last_name`, `address`, ` contact_number`, `email_address`, `password`, `gender`) VALUES (NULL, '$first_name', '$last_name', '$address', '$contact_number', '$email_address', '$password', '$gender');
 
        require "connection.php";
 
