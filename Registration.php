@@ -1,6 +1,5 @@
 
 <?php 
-    $conn = new mysqli($servername, $username, $password, $dbname);
 
      if (isset($_POST['register'])) {
         $first_name = $_POST["first_name"];
@@ -11,6 +10,8 @@
         $password = $_POST["password"];
         $gender = $_POST["gender"];
         
+  $conn = new mysqli($servername, $username, $password, $dbname);
+  
 
       $sql= INSERT INTO 
       'registration' (`registration_id`, `first_name`, `last_name`, `address`, ` contact_number`, `email_address`, `password`, `gender`) VALUES (NULL, '$first_name', '$last_name', '$address', '$contact_number', '$email_address', '$password', '$gender');
