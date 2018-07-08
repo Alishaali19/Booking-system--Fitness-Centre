@@ -4,6 +4,7 @@
 	<title>Transformation Fitness Centre</title>
 </head>
 <body>
+	<?php include "header.php" ?>
 		<div> <center>
 			<h2> WELCOME TO TRANSFORMATION FITNESS CENTRE </h2>
 
