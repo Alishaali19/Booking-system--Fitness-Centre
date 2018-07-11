@@ -6,8 +6,6 @@
     }
 
 
-
-
 // Create connection
 $conn = mysqli_connect($servername, $username, $password, $dbname);
 // Check connection
@@ -27,12 +25,8 @@ if (mysqli_query($conn, $sql)) {
 mysqli_close($conn);
 
 
-
-
-
-
-
  ?>
+ 
 <!DOCTYPE html>
 <html>
 <head>

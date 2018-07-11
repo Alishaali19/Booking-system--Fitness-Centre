@@ -1,5 +1,4 @@
 
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -41,8 +40,6 @@
 
 	<input type="submit" name="Login" value="Login"> <br><br>
 
-   
-	
 
 </form>
 	
@@ -50,9 +47,4 @@
 </center>
 </body>
 </html>
-
-
-
-
-
 

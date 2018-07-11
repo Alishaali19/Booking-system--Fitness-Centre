@@ -29,5 +29,24 @@ body{
 	padding:10px;
 }
 
+/*FOOTER */
+#footercontainer{
+	min-height: 100%;
+}
+
+#main{
+	overflow: auto;
+	padding-bottom: 100px;
+}
+
+#footer{
+	padding: 60px 0px;
+	width: 100%;
+	background-color: lightgrey;
+	position:relative;
+	height: 100px;
+	margin-top: -100px;
+	clear:both;
+}
 
 
