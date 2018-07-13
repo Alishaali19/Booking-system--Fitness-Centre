@@ -30,6 +30,12 @@ body{
 }
 
 /*FOOTER */
+.footer{
+	position: fixed;
+	left:0;
+	bottom:0;
+
+}
 #footercontainer{
 	min-height: 100%;
 }
@@ -40,13 +46,15 @@ body{
 }
 
 #footer{
-	padding: 60px 0px;
+	padding: 10px 0px 90px 0px ;
 	width: 100%;
 	background-color: lightgrey;
 	position:relative;
 	height: 100px;
 	margin-top: -100px;
 	clear:both;
+	position: relative;
+
 }
 
 
