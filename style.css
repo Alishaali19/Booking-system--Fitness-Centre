@@ -10,7 +10,7 @@ body{
 	background: black;
 	margin-left:auto;
 	margin-right:auto;
-	margin-top:20px;
+	margin-top:10px;
 	opacity:0.7;
 	filter:alpha(opacity=100); 
 }
@@ -19,14 +19,14 @@ body{
 	list-style: none;
 	display:inline;
 	font-weight: bold;
-	padding:20px;
+	padding:10px;
 
 }
 
 #nav_wrapper a{
 	color:white;
 	text-decoration: none;
-	padding:10px;
+	padding:5px;
 }
 
 /*FOOTER */
@@ -49,11 +49,15 @@ body{
 	padding: 10px 0px 90px 0px ;
 	width: 100%;
 	background-color: lightgrey;
-	position:relative;
 	height: 100px;
 	margin-top: -100px;
 	clear:both;
-	position: relative;
+	
+
+}
+#footer p {
+	position: center, fixed,;
+
 
 }
 

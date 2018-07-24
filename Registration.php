@@ -1,5 +1,7 @@
+<?php include "header.php" ?>
 
 <?php 
+require "connection.php";
 
      if (isset($_POST['register'])) {
         $first_name = $_POST["first_name"];
@@ -8,24 +10,34 @@
         $contact_number = $_POST["contact_number"];
         $email_address = $_POST["email_address"];
         $password = $_POST["password"];
+        $confirm_password= $_POST ["confirm_password"];
         $gender = $_POST["gender"];
+
+
+$dbservername = "localhost";
+$dbusername = "root";
+$dbpassword = "root";
+$dbname = "FitnessCentre";
         
-  $conn = new mysqli($servername, $username, $password, $dbname);
-  
+  $conn = mysqli_connect($dbservername, $dbusername, $dbpassword, $dbname);
 
-      $sql= INSERT INTO 
-      'registration' (`registration_id`, `first_name`, `last_name`, `address`, ` contact_number`, `email_address`, `password`, `gender`) VALUES (NULL, '$first_name', '$last_name', '$address', '$contact_number', '$email_address', '$password', '$gender');
+  if (!$conn) {
+    die("Connection failed: " . mysqli_connect_error());
+}
 
-       require "connection.php";
 
-        if ($conn->query($sql) === TRUE) {
-        echo "Registration successfull" "<br>";
-        } else {
-        echo "Error: " . $sql . "<br>" . $conn->error;
-        }
+      $sql= "INSERT INTO 
+      registration (`registration_id`, `first_name`, `last_name`, `address`, ` contact_number`, `email_address`, `password`, `gender`)
+       VALUES (NULL, '$first_name', '$last_name', '$address', '$contact_number', '$email_address', '$password', '$gender')";
 
-            $conn->close();
+       
+    if (mysqli_query($conn, $sql)) {
+    echo "New record created successfully";
+} else {
+    echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+}
 
+mysqli_close($conn);
     }
 
  ?> 
@@ -67,6 +79,15 @@
     Confirm Password
     <input required type="password" name="confirm_password"><br><br>
 
+<?php  
+    $errors= array();
+if( strcmp($password, $confirm_password) != 0 ) {
+            array_push($errors, "Passwords do not match");
+        }
+
+?>
+
+
     Gender:
     <input required type="radio" name="gender"
     <?php if (isset($gender) && $gender=="female") echo "checked";?>
@@ -89,3 +110,5 @@
 
 </body>
 </html>
+
+<?php include "footer.php" ?>
