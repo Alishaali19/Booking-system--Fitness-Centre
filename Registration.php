@@ -32,7 +32,7 @@ $dbname = "FitnessCentre";
 
        
     if (mysqli_query($conn, $sql)) {
-    echo "New record created successfully";
+    echo "Thank you for registering!";
 } else {
     echo "Error: " . $sql . "<br>" . mysqli_error($conn);
 }
@@ -78,14 +78,12 @@ mysqli_close($conn);
 
     Confirm Password
     <input required type="password" name="confirm_password"><br><br>
+    
+    <script type="text/javascript">
+        
 
-<?php  
-    $errors= array();
-if( strcmp($password, $confirm_password) != 0 ) {
-            array_push($errors, "Passwords do not match");
-        }
+    </script>
 
-?>
 
 
     Gender:

@@ -3,7 +3,44 @@
 <?php 
 require "connection.php";
 
+if (isset($_POST['signup'])) {
 
+    $mem_first_name = $_POST["mem_first_name"];
+    $mem_last_name = $_POST["mem_last_name"];
+    $mem_email_address = $_POST["mem_email_address"];
+    $age = $_POST["age"];
+    $ec_first_name = $_POST["ec_first_name"];
+    $ec_last_name = $_POST["ec_last_name"];
+    $ec_contact_number = $_POST["ec_contact_number"];
+    $personal_trainer = $_POST["personal_trainer"];
+    $weight = $_POST["weight"];
+
+
+
+$dbservername = "localhost";
+$dbusername = "root";
+$dbpassword = "root";
+$dbname = "FitnessCentre";
+        
+  $conn = mysqli_connect($dbservername, $dbusername, $dbpassword, $dbname);
+
+  if (!$conn) {
+    die("Connection failed: " . mysqli_connect_error());
+}
+
+$sql= "INSERT INTO `membership` (`membership_id`, `mem_first_name`, `mem_last_name`, `mem_email_address`, `age`, `ec_first_name`, `ec_last_name`, `ec_contact_number`, `personal_trainer`, `weight`) VALUES (NULL, '$mem_first_name', '$mem_last_name', 'l$mem_email_address', '$age', '$ec_first_name', '$ec_last_name', '$ec_contact_number', '$personal_trainer', '$weight')";
+
+
+
+
+  if (mysqli_query($conn, $sql)) {
+    echo "Thank you for signning up with us!";
+} else {
+    echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+}
+
+mysqli_close($conn);
+    }
 
 ?>
 
@@ -27,21 +64,16 @@ require "connection.php";
         
 
     First Name
-    <input required type="text" name="first_name"><br><br>
+    <input required type="text" name="mem_first_name"><br><br>
 
     Last Name
-    <input required type="text" name="last_name"><br><br>
+    <input required type="text" name="mem_last_name"><br><br>
 
     Email Address
-    <input required type="text" name="email_address"><br><br>
+    <input required type="text" name="mem_email_address"><br><br>
 
-     Are you over 18 years of age? <br>
-    <input required type="radio" name="age"
-    <?php if (isset($age) && $age=="yes") echo "checked";?>
-    value="yes">Yes
-    <input type="radio" name="age"
-     <?php if (isset($age) && $age=="no") echo "checked";?>
-    value="no">No<br><br>
+     Age 
+    <input required type="text" name="age"><br><br>
 
 
 
@@ -54,7 +86,7 @@ require "connection.php";
     <input required type="text" name="ec_last_name"><br><br>
 
     Contact Number
-    <input required type="text" name="ec_contact_number"><br><br>
+    <input required type="text" name="ec_contact_number"><br>
 
 
 <h4>*optional </h4>
@@ -68,7 +100,7 @@ require "connection.php";
     value="no">No<br><br>
 
     Weight  
-    <input type="text" name="weight"> <br><br>
+    <input required type="text" name="weight"> <br><br>
 
     <input type="submit" name="signup" value="Sign Up">
 

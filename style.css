@@ -1,6 +1,7 @@
 body{
 	font-family: arial, sans-serif;
 	text-align: center;
+	background-image: IMG_4383-1.jpg;
 }
 
 
@@ -56,7 +57,7 @@ body{
 
 }
 #footer p {
-	position: center, fixed,;
+	position: center, fixed;
 
 
 }

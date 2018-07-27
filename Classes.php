@@ -8,6 +8,18 @@
 <?php
 require "connection.php"
 
+$dbservername = "localhost";
+$dbusername = "root";
+$dbpassword = "root";
+$dbname = "FitnessCentre";
+        
+  $conn = mysqli_connect($dbservername, $dbusername, $dbpassword, $dbname);
+
+  if (!$conn) {
+    die("Connection failed: " . mysqli_connect_error());
+}
+
+
 $sql = "SELECT * from classes";
 
 $results= mysqli_query ($conn, $sql);
@@ -24,15 +36,18 @@ if (mysqli_num_rows($result) > 0){
   $class_image= $row["class_image"];
   $class_instructor= $row["class_instructor"];
 
+
+
   ?>
+
 
 
   <figure class="snip1195">
 
   <h4> <?php echo "$class_name"; ?></h4>
 
-  <div class="image">
-    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sq-sample14.jpg" alt="sq-sample14"/>
+  <div class="class_image">
+    <img src= <?php echo "$class_image" ?>/>
   </div>
 
   <div class="rating">
@@ -41,13 +56,13 @@ if (mysqli_num_rows($result) > 0){
 
   <figcaption>
     <p>
-      Zumba description
-      Zumba Schedule
-      Zumba instructor name
+      <?php echo " $class_description " ?>
+      <?php echo " $class_schedule " ?>
+      <?php echo " $class_instructor " ?>
     </p>
 
     <div class="price">
-      <s>$24.00</s>$19.00
+      <s> <?php echo"$class_price " ?> </s>
     </div>
 
   </figcaption><a href="#" class="add-to-cart">Add to Cart</a>
