@@ -13,6 +13,23 @@ require "connection.php";
         $confirm_password= $_POST ["confirm_password"];
         $gender = $_POST["gender"];
 
+        if ($password ==  $confirm_password) {
+
+      $sql= "INSERT INTO `registration`(`registration_id`, `first_name`, `last_name`, `address`, `contact_number`, `email_address`, `password`, `gender`) VALUES (NULL, '$first_name', '$last_name', '$address', '$contact_number', '$email_address', '$password', '$gender')";
+
+
+    if (mysqli_query($conn, $sql)) {
+    echo "Thank you for registering!";
+} else {
+    echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+}
+
+mysqli_close($conn);
+
+       }else{
+        echo "Password does not Match";
+       }
+
 
 $dbservername = "localhost";
 $dbusername = "root";
@@ -25,20 +42,7 @@ $dbname = "FitnessCentre";
     die("Connection failed: " . mysqli_connect_error());
 }
 
-
-      $sql= "INSERT INTO 
-      registration (`registration_id`, `first_name`, `last_name`, `address`, ` contact_number`, `email_address`, `password`, `gender`)
-       VALUES (NULL, '$first_name', '$last_name', '$address', '$contact_number', '$email_address', '$password', '$gender')";
-
-       
-    if (mysqli_query($conn, $sql)) {
-    echo "Thank you for registering!";
-} else {
-    echo "Error: " . $sql . "<br>" . mysqli_error($conn);
-}
-
-mysqli_close($conn);
-    }
+    } //end if
 
  ?> 
 
@@ -71,20 +75,13 @@ mysqli_close($conn);
     <input required type="text" name="contact_number"><br><br>
 
     Email Address
-    <input required type="text" name="email_address"><br><br>
+    <input required type="email" name="email_address"><br><br>
 
     Password
-    <input required type="password" name="password"><br><br>
+    <input minlength="5 characters" required type="password" name="password"><br><br>
 
     Confirm Password
-    <input required type="password" name="confirm_password"><br><br>
-    
-    <script type="text/javascript">
-        
-
-    </script>
-
-
+    <input minlength="5 characters" required type="password" name="confirm_password"><br><br>
 
     Gender:
     <input required type="radio" name="gender"

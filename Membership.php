@@ -70,10 +70,10 @@ mysqli_close($conn);
     <input required type="text" name="mem_last_name"><br><br>
 
     Email Address
-    <input required type="text" name="mem_email_address"><br><br>
+    <input required type="email" name="mem_email_address"><br><br>
 
      Age 
-    <input required type="text" name="age"><br><br>
+    <input required type="number" name="age"><br><br>
 
 
 
