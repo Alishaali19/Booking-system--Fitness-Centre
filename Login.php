@@ -1,3 +1,4 @@
+<?php include "header.php" ?>
 
 <!DOCTYPE html>
 <html>
@@ -36,7 +37,7 @@
 
 	<br><br>
 
-	Don't have an account? Register Here!<br><br>
+	Don't have an account? <a href="Registration.php">Register Here</a>!<br><br>
 
 	<input type="submit" name="Login" value="Login"> <br><br>
 
@@ -47,4 +48,6 @@
 </center>
 </body>
 </html>
+
+<?php include "footer.php" ?>
 

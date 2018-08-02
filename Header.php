@@ -11,13 +11,12 @@
 			
 			<ul>
 				
-				<li><a href="#"> Home </a></li>
-				<li><a href="#"> About </a></li>
-				<li><a href="#"> Classes </a></li>
+				<li><a href="Homepage.php"> Home </a></li>
+				<li><a href="Classes.php"> Classes </a></li>
 				<li><a href="#"> Features </a></li>
-				<li><a href="#"> Membership </a></li>
-				<li><a href="#"> Register</a></li>
-				<li><a href="#"> Login </a></li>
+				<li><a href="Membership.php"> Membership </a></li>
+				<li><a href="Registration.php"> Register</a></li>
+				<li><a href="Login.php"> Login </a></li>
 
 			</ul>
 		</div>
