@@ -1,5 +1,6 @@
 <?php include "header.php" ?>
 
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,7 +9,8 @@
 <body>
 
 <center>
-<div >
+<div class="container">
+	<div id="loginform">
 
 
     <h2>Login </h2>
@@ -37,13 +39,15 @@
 
 	<br><br>
 
-	Don't have an account? <a href="Registration.php">Register Here</a>!<br><br>
+	Don't have an account? <a href="Registration.php">Register Here!</a> <br><br>
+
+	Want to become a member? <a href="Membership.php"> Sign Up Here! </a> <br> <br>
 
 	<input type="submit" name="Login" value="Login"> <br><br>
 
 
 </form>
-	
+	</div>
 </div>
 </center>
 </body>
