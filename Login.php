@@ -1,10 +1,35 @@
-<?php include "header.php" ?>
+<?php include "header.php" 
+
+
+if ($_SERVER["REQUEST_METHOD"]== "POST") {
+	$email_address= $_POST["email"];
+	$password= $_POST["password"];
+
+	require "connection.php";
+
+	$sql= "SELECT * from registration where email_address = '$email_address' AND password= '$password' ";
+
+	$result = mysqli_query ($conn, $sql);
+
+	if (mysqli_num_rows ($result)> 0) {
+		//output data of each row
+		while ($row= mysqli_fetch_assoc($result)){
+
+			header("location: Homepage.php");
+
+		}
+	} else { echo "0 results";
+}
+}
+
+
+?>
 
 
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<title>Login</title>
 </head>
 <body>
 
@@ -18,10 +43,10 @@
 
 <form action = "login.php" method ="post">
 	
-	Email 
+	Email <br>
 	<input required placeholder="Enter Email" type="email" name="email"> <br> <br>
 
-    Password
+    Password <br>
 	<input required placeholder="Enter Password" id= 'pass' type="password" name="pass" > <br> <br>
 
 	<input type="checkbox" id= "check" onclick='showPass();'> Show Password
@@ -37,13 +62,16 @@
 	}
 </script>
 
+
 	<br><br>
+
+	<input type="submit" name="Login" value="Login"> <br><br>
 
 	Don't have an account? <a href="Registration.php">Register Here!</a> <br><br>
 
 	Want to become a member? <a href="Membership.php"> Sign Up Here! </a> <br> <br>
 
-	<input type="submit" name="Login" value="Login"> <br><br>
+	
 
 
 </form>

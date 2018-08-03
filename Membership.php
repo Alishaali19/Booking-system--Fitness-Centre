@@ -64,29 +64,29 @@ mysqli_close($conn);
         
 
     First Name
-    <input required type="text" name="mem_first_name"><br><br>
+    <input required placeholder="Enter First Name" type="text" name="mem_first_name"><br><br>
 
     Last Name
-    <input required type="text" name="mem_last_name"><br><br>
+    <input required placeholder="Enter Last Name" type="text" name="mem_last_name"><br><br>
 
     Email Address
-    <input required type="email" name="mem_email_address"><br><br>
+    <input required placeholder="Enter Email" type="email" name="mem_email_address"><br><br>
 
      Age 
-    <input required type="number" name="age"><br><br>
+    <input required placeholder="Age" type="number" name="age"><br><br>
 
 
 
 <h4>Emergency Contact Information</h4>
     
     First Name
-    <input required type="text" name="ec_first_name"><br> <br>
+    <input required placeholder="Enter First Name" type="text" name="ec_first_name"><br> <br>
 
     Last Name
-    <input required type="text" name="ec_last_name"><br><br>
+    <input required placeholder="Enter Last Name"  type="text" name="ec_last_name"><br><br>
 
     Contact Number
-    <input required type="text" name="ec_contact_number"><br>
+    <input required placeholder="Contact Number"  type="text" name="ec_contact_number"><br>
 
 
 <h4>*optional </h4>
@@ -100,7 +100,7 @@ mysqli_close($conn);
     value="no">No<br><br>
 
     Weight  
-    <input required type="text" name="weight"> <br><br>
+    <input required placeholder="Enter Weight"  type="text" name="weight"> <br><br>
 
     <input type="submit" name="signup" value="Sign Up">
 
