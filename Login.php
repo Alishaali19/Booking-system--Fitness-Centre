@@ -2,20 +2,21 @@
 
 
 if ($_SERVER["REQUEST_METHOD"]== "POST") {
-	$email_address= $_POST["email"];
+	$email_address= $_POST["email_address"];
 	$password= $_POST["password"];
 
-	require "connection.php";
 
-	$sql= "SELECT * from registration where email_address = '$email_address' AND password= '$password' ";
+	$sql= "SELECT * from registration WHERE email_address = '$email_address' AND password= sha1('$password') ";
 
 	$result = mysqli_query ($conn, $sql);
+
+	
 
 	if (mysqli_num_rows ($result)> 0) {
 		//output data of each row
 		while ($row= mysqli_fetch_assoc($result)){
 
-			header("location: Homepage.php");
+			header("location: homepage.php");
 
 		}
 	} else { echo "0 results";
@@ -44,7 +45,7 @@ if ($_SERVER["REQUEST_METHOD"]== "POST") {
 <form action = "login.php" method ="post">
 	
 	Email <br>
-	<input required placeholder="Enter Email" type="email" name="email"> <br> <br>
+	<input required placeholder="Enter Email" type="email" name="email_address"> <br> <br>
 
     Password <br>
 	<input required placeholder="Enter Password" id= 'pass' type="password" name="pass" > <br> <br>

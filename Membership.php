@@ -51,14 +51,13 @@ mysqli_close($conn);
     <title>Membership</title>
 </head>
 <body>
+<center>
+    <div class="container" id="container">
 
-
-    <center>
-    <div>
         <h2> Membership Sign Up </h2>
         <h3> Standard Membership </h3> 
 
-<form action = "Membership.php" method = "POST"> 
+<form action = "Membership.php" method = "POST" id="membershipform"> 
 
 <h4>Personal Information</h4>
         
@@ -107,7 +106,7 @@ mysqli_close($conn);
     
         
     </div>
-</center>
+    </center>
 </body>
 </html>
 

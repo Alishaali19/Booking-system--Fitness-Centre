@@ -1,11 +1,13 @@
 body{
 	font-family: arial, sans-serif;
-	text-align: center;
-	background-image: IMG_4383-1.jpg;
+	position: center;
+	background-image: url(IMG_4383-1.jpg);
+	color: white;
 }
 
 
-#nav_wrapper{
+#nav_wrapper {
+
 	height:80px;
 	width:100%;
 	background: black;
@@ -30,37 +32,62 @@ body{
 	padding:5px;
 }
 
+
 /*FOOTER */
-.footer{
-	position: fixed;
-	left:0;
-	bottom:0;
-
-}
-#footercontainer{
-	min-height: 100%;
-}
-
-#main{
-	overflow: auto;
-	padding-bottom: 100px;
-}
-
-#footer{
-	padding: 10px 0px 90px 0px ;
-	width: 100%;
-	background-color: lightgrey;
-	height: 100px;
-	margin-top: -100px;
-	clear:both;
+footer{
+	background-color: grey ;
+	opacity: 0.9;
+	filter: alpha(opacity=100);
+	position: bottom;
+	font-weight: bold;
+	padding:10px;
 	
-
-}
-#footer p {
-	position: center, fixed;
-
-
 }
 
+#list ul, li, a{
+ 	margin: 5px;
+ 	color: white; 
+ 	text-align: left;
+}
 
-/* Classes! */
+#footerinfo p{
+	margin: 5px;
+	color: white;
+	text-align: right;
+
+}
+
+/*Membership*/
+#container {
+	position: absolute;
+    left: 0;
+    margin: 30px;
+    max-width: 800px;
+    padding: 16px;
+    background-color: grey;
+    opacity: 0.9;
+    filter: alpha(opacity= 100);
+    color: black;
+}
+
+input[type=text], input[type=password], input[type=email], input[type=number], input[type=submit]{
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    border: none;
+    background: white;
+}
+
+
+
+/* Login! */
+
+#loginform{
+	margin-top: 120px;
+  	max-width: 600px;
+  	height: 320px;
+  	border: 1px solid #9C9C9C;
+  	background-color: #EAEAEA;
+  	padding: 20px;
+  	margin-top: -85px;
+}

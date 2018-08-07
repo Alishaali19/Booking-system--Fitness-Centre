@@ -9,9 +9,10 @@
 
     
 <footer>
+    
 <div class="container">
-
-    <div class="list">
+ 
+    <div class="list" id="list">
 
     <ul>
                 
@@ -26,7 +27,7 @@
     
 </div>
     
-    <div class="footer">
+    <div class="footer" id="footerinfo">
      
             
        <p> CONTACT INFORMATION</p>
