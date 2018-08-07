@@ -58,31 +58,31 @@ $dbname = "FitnessCentre";
 <body>
 <center>
     
-    <div>
+    <div id="registration">
         <h2> Register here </h2>
         <h3> Welcome to Registration!</h3>
 
  <form action = "Registration.php" method = "POST"> 
 
-    First Name 
+    First Name <br>
     <input required placeholder="Enter First Name" type="text" name="first_name"><br><br>
 
-    Last Name 
+    Last Name <br>
     <input required placeholder="Enter Last Name" type="text" name="last_name"><br><br>
 
-    Address 
+    Address <br>
     <input required placeholder="Enter Address" type="text" name="address"><br><br>
 
-    Contact Number 
+    Contact Number <br>
     <input required placeholder="Contact Number" type="text" name="contact_number"><br><br>
 
-    Email Address 
+    Email Address <br>
     <input required placeholder="Enter Email" type="email" name="email_address"><br><br>
 
-    Password
+    Password<br>
     <input minlength="5 characters" required placeholder="Enter Password"type="password" name="password"><br><br>
 
-    Confirm Password 
+    Confirm Password <br>
     <input minlength="5 characters" required placeholder="Confirm Password" type="password" name="confirm_password"><br><br>
 
     Gender:

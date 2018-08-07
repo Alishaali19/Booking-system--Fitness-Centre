@@ -55,36 +55,35 @@ mysqli_close($conn);
     <div class="container" id="container">
 
         <h2> Membership Sign Up </h2>
-        <h3> Standard Membership </h3> 
 
 <form action = "Membership.php" method = "POST" id="membershipform"> 
 
 <h4>Personal Information</h4>
         
 
-    First Name
+    First Name<br>
     <input required placeholder="Enter First Name" type="text" name="mem_first_name"><br><br>
 
-    Last Name
+    Last Name<br>
     <input required placeholder="Enter Last Name" type="text" name="mem_last_name"><br><br>
 
-    Email Address
+    Email Address <br>
     <input required placeholder="Enter Email" type="email" name="mem_email_address"><br><br>
 
-     Age 
+     Age <br>
     <input required placeholder="Age" type="number" name="age"><br><br>
 
 
 
 <h4>Emergency Contact Information</h4>
     
-    First Name
+    First Name <br>
     <input required placeholder="Enter First Name" type="text" name="ec_first_name"><br> <br>
 
-    Last Name
+    Last Name <br>
     <input required placeholder="Enter Last Name"  type="text" name="ec_last_name"><br><br>
 
-    Contact Number
+    Contact Number <br>
     <input required placeholder="Contact Number"  type="text" name="ec_contact_number"><br>
 
 
@@ -98,12 +97,11 @@ mysqli_close($conn);
      <?php if (isset($personal_trainer) && $personal_trainer=="no") echo "checked";?>
     value="no">No<br><br>
 
-    Weight  
+    Weight  <br>
     <input required placeholder="Enter Weight"  type="text" name="weight"> <br><br>
 
     <input type="submit" name="signup" value="Sign Up">
 
-    
         
     </div>
     </center>
