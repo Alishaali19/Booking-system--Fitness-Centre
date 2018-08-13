@@ -1,12 +1,17 @@
-<?php include "header.php" 
-
+<?php include "header.php"; ?>
+<?php 
+session_start();
 
 if ($_SERVER["REQUEST_METHOD"]== "POST") {
+
+	require "connection.php";
+
 	$email_address= $_POST["email_address"];
 	$password= $_POST["password"];
 
 
-	$sql= "SELECT * from registration WHERE email_address = '$email_address' AND password= sha1('$password') ";
+	$sql= "SELECT * from registration WHERE email_address = '$email_address' AND password= sha1('$password')";
+	echo $sql;
 
 	$result = mysqli_query ($conn, $sql);
 
@@ -15,14 +20,16 @@ if ($_SERVER["REQUEST_METHOD"]== "POST") {
 	if (mysqli_num_rows ($result)> 0) {
 		//output data of each row
 		while ($row= mysqli_fetch_assoc($result)){
+			
+			$_SESSION["registration_id"] = $row["registration_id"];
 
-			header("location: homepage.php");
+			header ("location: Homepage.php");
+
 
 		}
 	} else { echo "0 results";
 }
 }
-
 
 ?>
 
@@ -35,7 +42,7 @@ if ($_SERVER["REQUEST_METHOD"]== "POST") {
 <body>
 
 <center>
-<div class="container">
+
 	<div id="loginform">
 
 
@@ -48,7 +55,7 @@ if ($_SERVER["REQUEST_METHOD"]== "POST") {
 	<input required placeholder="Enter Email" type="email" name="email_address"> <br> <br>
 
     Password <br>
-	<input required placeholder="Enter Password" id= 'pass' type="password" name="pass" > <br> <br>
+	<input required placeholder="Enter Password" id= 'pass' type="password" name="password" > <br> <br>
 
 	<input type="checkbox" id= "check" onclick='showPass();'> Show Password
 
@@ -77,7 +84,6 @@ if ($_SERVER["REQUEST_METHOD"]== "POST") {
 
 </form>
 	</div>
-</div>
 </center>
 </body>
 </html>

@@ -2,8 +2,8 @@ body{
 	font-family: arial, sans-serif;
 	position: center;
 	background-image: url(IMG_4383-1.jpg);
-	color: white;
-	background-repeat: none;
+	color: black;
+	background-repeat: no-repeat;
 }
 
 
@@ -63,8 +63,9 @@ input[type=text], input[type=password], input[type=email], input[type=number], i
   padding: 16px 20px;
   border: none;
   cursor: pointer;
-  width: 50%;
+  width: 45%;
   opacity: 0.9;
+  font-weight: bold;
  }
 
  input[type=submit]:hover{
@@ -83,17 +84,21 @@ input[type=text], input[type=password], input[type=email], input[type=number], i
 }
 
 
-/* Login! */
-
 #loginform{
-	margin-top: 120px;
-  	max-width: 600px;
-  	height: 320px;
-  	border: 1px solid #9C9C9C;
-  	background-color: #EAEAEA;
-  	padding: 20px;
-  	margin-top: -85px;
+	margin: 5px;
+    max-width: 1500px;
+    padding: 10px;
+    background-color: white;
+    opacity: 0.9;
+    filter: alpha(opacity= 100);
+    color: black;
 }
+
+#loginform a{
+  color: black;
+}
+
+
 
 /*FOOTER */
 footer{
