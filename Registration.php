@@ -19,7 +19,7 @@ require "connection.php";
 
 
     if (mysqli_query($conn, $sql)) {
-    echo "Thank you for registering!";
+    header("location: Homepage.php");
 
 } else {
     echo "Error: " . $sql . "<br>" . mysqli_error($conn);
@@ -32,7 +32,6 @@ mysqli_close($conn);
         echo "Password does not Match";
        }
 
-header("location: Homepage.php");
 
 $dbservername = "localhost";
 $dbusername = "root";

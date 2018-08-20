@@ -5,9 +5,8 @@ if(isset($_SESSION["registration_id"])){
 
   $reg_id = $_SESSION["registration_id"];
 }else{
-  header("location: Homepage.php");
+  header("location: Confirmation.php");
 }
-
 
 
 if(isset($_GET["id"])){
@@ -29,7 +28,7 @@ if(isset($_GET["id"])){
 if (mysqli_query($conn, $sql)) {
     echo "New record created successfully";
 
-    header("location: thanks.php");
+    header("location: classes.php");
 
 } else {
     echo "Error: " . $sql . "<br>" . mysqli_error($conn);
@@ -78,17 +77,14 @@ if (mysqli_num_rows($result) > 0) {
 }
 }
        ?>
-        <!-- design here -->
-
-
-
-
-
-
-
-
        <h1>Confirmation</h1>
+        <!-- design here -->
+       
+        Class Name : <?php echo "$class_name"; ?>
+        Class Price: <?php echo "$class_price"; ?>
+        Class Instructor:  <?php echo "$class_instructor"; ?>
 
+  
 
        <form action="Confirmation.php?id=<?php echo "$class_id"; ?>" method="post">
        <button name="confirm" class="btn btn-primary" type="submit">Confirm Booking</button>

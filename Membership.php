@@ -34,7 +34,7 @@ $sql= "INSERT INTO `membership` (`membership_id`, `mem_first_name`, `mem_last_na
 
 
   if (mysqli_query($conn, $sql)) {
-    echo "Thank you for signning up with us!";
+    header("location: Classes.php");
 } else {
     echo "Error: " . $sql . "<br>" . mysqli_error($conn);
 }
