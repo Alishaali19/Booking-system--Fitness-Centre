@@ -12,14 +12,19 @@ require "connection.php";
         $password = $_POST["password"];
         $confirm_password= $_POST ["confirm_password"];
         $gender = $_POST["gender"];
+        $age = $_POST["age"];
+        $ec_first_name = $_POST["ec_first_name"];
+        $ec_last_name = $_POST["ec_last_name"];
+        $ec_contact_number = $_POST["ec_contact_number"];
 
         if ($password ==  $confirm_password) {
 
-      $sql= "INSERT INTO `registration`(`registration_id`, `first_name`, `last_name`, `address`, `contact_number`, `email_address`, `password`, `gender`) VALUES (NULL, '$first_name', '$last_name', '$address', '$contact_number', '$email_address', sha1('$password'), '$gender')";
+      $sql= "INSERT INTO `registration`(`registration_id`, `first_name`, `last_name`, `address`, `contact_number`, `email_address`, `password`, `gender`, `age`,`ec_first_name`, `ec_last_name`, `ec_contact_number`)
+       VALUES (NULL, '$first_name', '$last_name', '$address', '$contact_number', '$email_address', sha1('$password'), '$gender', '$age', '$ec_first_name', '$ec_last_name', '$ec_contact_number')";
 
 
     if (mysqli_query($conn, $sql)) {
-    header("location: Homepage.php");
+    header("location: Login.php");
 
 } else {
     echo "Error: " . $sql . "<br>" . mysqli_error($conn);
@@ -79,10 +84,11 @@ $dbname = "FitnessCentre";
     <input required placeholder="Enter Email" type="email" name="email_address"><br><br>
 
     Password<br>
-    <input minlength="5 characters" required placeholder="Enter Password"type="password" name="password"><br><br>
+    <input minlength="8 characters" pattern="(?=.*\d)(?=.*[a-z]).{9,}" required placeholder="Enter Password"type="password" name="password"><br><br>
 
     Confirm Password <br>
-    <input minlength="5 characters" required placeholder="Confirm Password" type="password" name="confirm_password"><br><br>
+    <input minlength="8 characters" required placeholder="Confirm Password" type="password" name="confirm_password"><br><br>
+
 
     Gender:
     <input required type="radio" name="gender"
@@ -96,6 +102,20 @@ $dbname = "FitnessCentre";
     <input type="radio" name="gender"
      <?php if (isset($gender) && $gender=="other") echo "checked";?>
     value="other">Other<br><br>
+
+     Age <br>
+    <input required placeholder="Age" type="number" name="age"><br><br>
+
+    <h4>Emergency Contact Information</h4>
+    
+    First Name <br>
+    <input required placeholder="Enter First Name" type="text" name="ec_first_name"><br> <br>
+
+    Last Name <br>
+    <input required placeholder="Enter Last Name"  type="text" name="ec_last_name"><br><br>
+
+    Contact Number <br>
+    <input required placeholder="Contact Number"  type="text" name="ec_contact_number"><br>
 
     <input type="Submit" name="register" value="Register">
 

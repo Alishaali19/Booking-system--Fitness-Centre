@@ -39,6 +39,10 @@ if (mysqli_query($conn, $sql)) {
 
 
 
+if (isset($_POST["cancel"])) {
+  header("location: classes.php");
+}
+
 
 
 include "header.php"; ?>
@@ -80,14 +84,16 @@ if (mysqli_num_rows($result) > 0) {
        <h1>Confirmation</h1>
         <!-- design here -->
        
-        Class Name : <?php echo "$class_name"; ?>
-        Class Price: <?php echo "$class_price"; ?>
-        Class Instructor:  <?php echo "$class_instructor"; ?>
+        Class Name : <?php echo "$class_name"; ?>  <br> 
+        Class Price: <?php echo "$class_price"; ?> <br>
+        Class Instructor:  <?php echo "$class_instructor"; ?> <br>
 
   
 
        <form action="Confirmation.php?id=<?php echo "$class_id"; ?>" method="post">
-       <button name="confirm" class="btn btn-primary" type="submit">Confirm Booking</button>
+       <button name="confirm" class="btn btn-primary btn-lg" type="submit">Confirm Booking</button>
+
+       <button name="cancel" class="btn btn-danger btn-medium" type="submit">Cancel</button>
 </form>
 
 

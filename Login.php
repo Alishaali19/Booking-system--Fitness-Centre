@@ -54,7 +54,7 @@ if ($_SERVER["REQUEST_METHOD"]== "POST") {
 	<input required placeholder="Enter Email" type="email" name="email_address"> <br> <br>
 
     Password <br>
-	<input required placeholder="Enter Password" id= 'pass' type="password" name="password" > <br> <br>
+	<input minlength="8 characters" pattern="(?=.*\d)(?=.*[a-z]).{9,}" required placeholder="Enter Password" id= 'pass' type="password" name="password" > <br> <br>
 
 	<input type="checkbox" id= "check" onclick='showPass();'> Show Password
 
@@ -69,16 +69,12 @@ if ($_SERVER["REQUEST_METHOD"]== "POST") {
 	}
 </script>
 
-
 	<br><br>
 
 	<input type="submit" name="Login" value="Login"> <br><br>
 
 	Don't have an account? <a href="Registration.php">Register Here!</a> <br><br>
 
-	Want to become a member? <a href="Membership.php"> Sign Up Here! </a> <br> <br>
-
-	
 
 
 </form>

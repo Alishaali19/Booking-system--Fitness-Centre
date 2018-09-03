@@ -1,7 +1,8 @@
 <?php include "header.php"; ?>
+<div class="classes">
+<h2> Classes </h2> 
 
-<h2> Classes</h2> 
-
+</div>
 
 <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
@@ -14,6 +15,10 @@
   background: #fff;
   background: whitesmoke;
 }
+ .classes{
+  color: white;
+  text-indent: 250px;
+ } 
 
 .container {
   width: 100%;
@@ -119,7 +124,7 @@ if (mysqli_num_rows($result) > 0) {
 
 
        ?>
-  <div class="product">
+        <div class="product">
     <div class="img-container">
       <img src="$class_image">
     </div>
@@ -139,7 +144,6 @@ if (mysqli_num_rows($result) > 0) {
       </div>
     </div>
   </div>
-
 
        <?php
     }
