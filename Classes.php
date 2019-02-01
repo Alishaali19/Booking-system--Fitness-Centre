@@ -126,7 +126,7 @@ if (mysqli_num_rows($result) > 0) {
        ?>
         <div class="product">
     <div class="img-container">
-      <img src="$class_image">
+      <img src="<?php echo $class_image ?>">
     </div>
     <div class="product-info">
       <div class="product-content">

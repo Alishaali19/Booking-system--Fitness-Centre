@@ -54,7 +54,7 @@ if ($_SERVER["REQUEST_METHOD"]== "POST") {
 	<input required placeholder="Enter Email" type="email" name="email_address"> <br> <br>
 
     Password <br>
-	<input minlength="8 characters" pattern="(?=.*\d)(?=.*[a-z]).{9,}" required placeholder="Enter Password" id= 'pass' type="password" name="password" > <br> <br>
+	<input minlength="8 characters" required placeholder="Enter Password" id= 'pass' type="password" name="password" > <br> <br>
 
 	<input type="checkbox" id= "check" onclick='showPass();'> Show Password
 

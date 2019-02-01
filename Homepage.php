@@ -20,7 +20,11 @@
 			<center>
 				<div class="headings">
 
-			<h2> WELCOME TO TRANSFORMATION FITNESS CENTRE </h2>
+
+
+			<h2> WELCOME TO </h2>
+
+			<img class="logo" src="logo.png">
 
 			<h3> Transform your life, fitness and health! </h3>
 

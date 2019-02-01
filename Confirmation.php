@@ -47,7 +47,7 @@ if (isset($_POST["cancel"])) {
 
 include "header.php"; ?>
 
-<h2> Classes</h2> 
+
 
 
 <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
@@ -55,11 +55,23 @@ include "header.php"; ?>
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 <!------ Include the above in your HEAD tag ---------->
 
+<style type="text/css">
+  .confirmation{
+    
+    opacity: 1;
+    filter: alpha(opacity= 100);
+    color: black;
+
+
+  }
+
+
+</style>
 
 
 
 
-<div class="container">
+<div class="confirmation">
 <?php 
 
 require "connection.php";
@@ -81,22 +93,33 @@ if (mysqli_num_rows($result) > 0) {
 }
 }
        ?>
-       <h1>Confirmation</h1>
+
+       <div class="modal-dialog">
+        <div class="modal-content">
+
+        
+<center>
+  <h2> Booking Confirmation</h2> <br>
+       <h3>Confirmation</h3>
         <!-- design here -->
        
-        Class Name : <?php echo "$class_name"; ?>  <br> 
-        Class Price: <?php echo "$class_price"; ?> <br>
-        Class Instructor:  <?php echo "$class_instructor"; ?> <br>
+        Class Name : <?php echo "$class_name"; ?>  <br> <br>
+        Class Price: <?php echo "$class_price"; ?> <br><br>
+        Class Instructor:  <?php echo "$class_instructor"; ?> <br><br>
 
   
-
+      <div class="modal-footer">
        <form action="Confirmation.php?id=<?php echo "$class_id"; ?>" method="post">
        <button name="confirm" class="btn btn-primary btn-lg" type="submit">Confirm Booking</button>
 
        <button name="cancel" class="btn btn-danger btn-medium" type="submit">Cancel</button>
+
 </form>
-
-
+</center>
+</div>
+</div>
+</div>
+</div>
 
 
 
