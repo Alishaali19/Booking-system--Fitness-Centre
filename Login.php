@@ -23,7 +23,7 @@ if ($_SERVER["REQUEST_METHOD"]== "POST") {
 			
 			$_SESSION["registration_id"] = $row["registration_id"];
 
-			header ("location: Classes.php");
+			header ("location: Dashboard.php");
 
 		}
 	} else { echo "0 results";
