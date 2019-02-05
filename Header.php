@@ -6,11 +6,11 @@
 </head>
 <body>
 
+
 	<div id= "nav"><br>
 		<div id= "nav_wrapper"><br>
-
-		
 			
+
 			<ul>
 				
 				<li><a href="Homepage.php"> Home </a></li>
@@ -22,6 +22,5 @@
 			</ul>
 		</div>
 	</div>
-
 </body>
 </html>
