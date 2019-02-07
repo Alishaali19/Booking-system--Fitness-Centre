@@ -1,5 +1,3 @@
-<?php include "Header.php"; ?>
-
 
 <!DOCTYPE html>
 <html>
@@ -13,7 +11,8 @@
 <body>
 <div id="dashboardinfo"> 
 
-<h2>My info</h2>
+<h2>My info</h2> 
+
 Name <br>
 
 Address <br>
@@ -28,6 +27,30 @@ Email <br>
 <h2>Booking History</h2>
 
 
+<div class="table-responsive">          
+  <table class="table">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Firstname</th>
+        <th>Lastname</th>
+        <th>Class Name</th>
+        <th>Class Date</th>
+        <th>Class Time</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
 
 
 </body>
@@ -36,5 +59,3 @@ Email <br>
 </html>
 
 
-
-<?php include "Footer.php"; ?>

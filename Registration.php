@@ -84,7 +84,7 @@ $dbname = "FitnessCentre";
     <input required placeholder="Enter Email" type="email" name="email_address"><br><br>
 
     Password<br>
-    <input minlength="8 characters" pattern="(?=.*\d)(?=.*[a-z]).{9,}" required placeholder="Enter Password"type="password" name="password"><br><br>
+    <input minlength="5 characters" maxlength="12 characters" pattern="(?=.*\d)(?=.*[a-z]).{9,}" required placeholder="Enter Password"type="password" name="password"><br><br>
 
     Confirm Password <br>
     <input minlength="8 characters" required placeholder="Confirm Password" type="password" name="confirm_password"><br><br>
