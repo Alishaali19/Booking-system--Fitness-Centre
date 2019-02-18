@@ -104,7 +104,7 @@ $dbname = "FitnessCentre";
     value="other">Other<br><br>
 
      Age <br>
-    <input required placeholder="Age" type="number" name="age"><br><br>
+    <input required placeholder="Age" type="number" name="age"><br><br>            
 
     <h4>Emergency Contact Information</h4>
     

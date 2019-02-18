@@ -20,8 +20,6 @@
 			<center>
 				<div class="headings">
 
-
-
 			<h2> WELCOME TO </h2>
 
 			<img class="logo" src="logo.png">
