@@ -7,6 +7,12 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 
+
+
+
+<script src="https://www.google.com/recaptcha/api.js" async defer></script> 
+<! google captcha !> 
+
 </head>
 <body>
 
@@ -18,12 +24,12 @@
     </div>
     <ul class="nav navbar-nav">
       
-       <li></li><a href="Homepage.php">Home</a></li>
-      	<a href="Pricing.php"> Pricing </a>
-				<a href="Classes.php"> Classes </a>
-				<a href="Features.php"> Features </a>
-				<a href="Registration.php"> Register</a>
-				<a href="Login.php"> Login </a>
+       <li><a href="Homepage.php">Home</a></li>
+      	<li><a href="Pricing.php"> Pricing </a></li>
+				<li><a href="Classes.php"> Classes </a></li>
+				<li><a href="Features.php"> Features </a></li>
+				<li><a href="Registration.php"> Register</a></li>
+				<li><a href="Login.php"> Login </a></li>
 
     </ul>
 
