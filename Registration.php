@@ -1,9 +1,30 @@
 <?php include "header.php" ?>
 
+<script type="text/javascript">
+    
+
+</script>
+
+
+
+
 <?php 
 require "connection.php";
 
      if (isset($_POST['register'])) {
+
+        $url="https://www.google.com/recaptcha/api/siteverify";
+        $secret_key="6Lc3yZcUAAAAADXoVKhMCby0SjiL5ZrkmG0pMlf6";
+        $response= $_POST ["g-recaptcha-response"];
+        $remoteip= $_SERVER ["REMOTE_ADDR"];
+
+        $details= file_get_contents("$url?secret=$secret_key&response=$response&remoteip=$remoteip");
+
+        $details_info= json_decode($details);  //takes data from webserver and displays it in the webpage. 
+
+
+        if ($details_info->success) {
+          
         $first_name = $_POST["first_name"];
         $last_name = $_POST["last_name"];
         $address = $_POST["address"];
@@ -12,15 +33,15 @@ require "connection.php";
         $password = $_POST["password"];
         $confirm_password= $_POST ["confirm_password"];
         $gender = $_POST["gender"];
-        $age = $_POST["age"];
         $ec_first_name = $_POST["ec_first_name"];
         $ec_last_name = $_POST["ec_last_name"];
         $ec_contact_number = $_POST["ec_contact_number"];
 
         if ($password ==  $confirm_password) {
 
-      $sql= "INSERT INTO `registration`(`registration_id`, `first_name`, `last_name`, `address`, `contact_number`, `email_address`, `password`, `gender`, `age`,`ec_first_name`, `ec_last_name`, `ec_contact_number`)
-       VALUES (NULL, '$first_name', '$last_name', '$address', '$contact_number', '$email_address', sha1('$password'), '$gender', '$age', '$ec_first_name', '$ec_last_name', '$ec_contact_number')";
+      $sql= "INSERT INTO `registration`(`registration_id`, `first_name`, `last_name`, `address`, `contact_number`, `email_address`, `password`, `gender`,`ec_first_name`, `ec_last_name`, `ec_contact_number`)
+       VALUES (NULL, '$first_name', '$last_name', '$address', '$contact_number', '$email_address', sha1('$password'), '$gender', '$ec_first_name', '$ec_last_name', '$ec_contact_number')";
+
 
 
     if (mysqli_query($conn, $sql)) {
@@ -48,6 +69,12 @@ $dbname = "FitnessCentre";
   if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
+        }
+
+        else{
+            echo "Registration was not successful";
+        }
+
 
     } //end if
 
@@ -61,10 +88,12 @@ $dbname = "FitnessCentre";
 </head>
 <body>
 <center>
+
     
     <div id="registration">
         <h2> Register here </h2>
         <h3> Welcome to Registration!</h3>
+        <h5>Please fill out the form below:</h5>
 
  <form action = "Registration.php" method = "POST"> 
 
@@ -103,8 +132,6 @@ $dbname = "FitnessCentre";
      <?php if (isset($gender) && $gender=="other") echo "checked";?>
     value="other">Other<br><br>
 
-     Age <br>
-    <input required placeholder="Age" type="number" name="age"><br><br>            
 
     <h4>Emergency Contact Information</h4>
     
@@ -116,6 +143,8 @@ $dbname = "FitnessCentre";
 
     Contact Number <br>
     <input required placeholder="Contact Number"  type="text" name="ec_contact_number"><br>
+
+    <div class="g-recaptcha" data-sitekey="6Lc3yZcUAAAAAMPOPmagOjwn8pWh78KvpFTertwm"></div> <br>
 
     <input type="Submit" name="register" value="Register">
 
