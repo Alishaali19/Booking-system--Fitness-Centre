@@ -1,18 +1,67 @@
-<?php include "header.php"; ?>
+<?php include "header.php";?>
+<?php
+session_start();
 
+//checks to see if logged in.
+
+if (isset($_SESSION["registration_id"])) {
+  $registration_id =$_SESSION["registration_id"];
+}else{ 
+  header("location: login.php");
+}
+
+
+//stores the membership id in url
+if (isset($_GET["membership_id"])) {
+  $membership_id= $_GET["membership_id"];
+}else{
+  header("location: membership.php");
+}
+
+
+require "connection.php";
+
+$sql = "SELECT * FROM membership where membership_id= $membership_id";
+$result = mysqli_query($conn, $sql);
+
+if (mysqli_num_rows($result) > 0) {
+    // output data of each row
+    while($row = mysqli_fetch_assoc($result)) {
+        $membership_title = $row["membership_title"];
+        $membership_discount = $row["membership_discount"];
+        $membership_price = $row["membership_price"];
+
+    }
+} else {
+    echo "0 results";
+}
+
+//sessions
+$_SESSION["membership_id"]= $membership_id;
+$_SESSION["membership_discount"]= $membership_discount;
+$_SESSION["membership_price"]= $membership_price;
+
+
+
+?>
+
+<div class="container">
 <h1>Membership Details</h1>
 
 <hr>
 
-<h3>Please review your membership purchase below. Once satisfied you can proceed to enter your credit card infomation and submit your purchase.</h3>
+<h4>Please review your membership purchase below. 
+ </h4> <br>
 
-<p><b>Membership Package: </b> </p>
-<p><b>Membership Cost: </b> </p>
-<p><b>Membership Package Discount: </b> </p>
+<p><b>Membership Package:</b> <?php echo $membership_title; ?></p>
+<p><b>Membership Cost: </b> $ <?php echo $membership_price; ?> </p>
+<p><b>Membership Package Discount:</b> <?php echo $membership_discount; ?>% </p>
+
+
 
 <hr>
 
-
+<h4>Please enter your credit card infomation to submit your purchase.</h4>
 
 
 
@@ -157,6 +206,6 @@ $charge = \Stripe\Charge::create([
 ]);
 
 ?>
-
+</div>
 
 <?php include "footer.php"; ?>

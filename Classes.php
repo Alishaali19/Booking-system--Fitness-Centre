@@ -1,8 +1,8 @@
 <?php include "header.php"; ?>
 <div class="classes">
 <h2> Classes </h2> 
-
-</div>
+<hr>
+</div> 
 
 <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
@@ -16,7 +16,7 @@
   background: whitesmoke;
 }
  .classes{
-  color: white;
+  color: black;
   text-indent: 250px;
  } 
 
@@ -100,7 +100,6 @@
   background: rgba(137, 137, 137, 0.04);
 }
 
-
 }
 </style>
 
@@ -127,6 +126,8 @@ if (mysqli_num_rows($result) > 0) {
 
 
        ?>
+
+       <form action="details.php" method="get">
         <div class="product">
     <div class="img-container">
       <img src="<?php echo $class_image ?>">
@@ -136,19 +137,28 @@ if (mysqli_num_rows($result) > 0) {
         <h1><?php echo "$class_name"; ?></h1>
           <p><?php echo "$class_description"; ?></p>
         <ul>
+          
           <li><?php echo "$class_schedule"; ?></li>
+          
           <li> Instructor <?php echo "$class_instructor"; ?></li>
           
         </ul>
         <div class="buttons">
           <a href="Confirmation.php?id=<?php echo "$class_id"; ?>" class="button buy" href="#">Book Now!</a> 
-          <a href="rating.php" class="button" id="popup" href="#">Rate This</a>
+
+          
+        <!---  POP UP FOR RATING ---->
+
+        <a href="rating.php" class="dropbtn" class="dropup" id="popup" href="rating.php">Rate This</a>
+
+  
+
           <span class="button" id="price"> $ <?php echo "$class_price"; ?></span>
         </div>
       </div>
     </div>
   </div>
-
+</form>
        <?php
     }
 } else {

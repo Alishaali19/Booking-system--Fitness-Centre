@@ -1,9 +1,7 @@
-<?php include "header.php" ?>
+<?php include "header.php";?>
 
 <div class="packages">
-	<h1>Membership Packages</h1> <br>
-
-	<div>
+	 
 
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
@@ -13,65 +11,115 @@
 <style type="text/css">
 	
 	h1{
-		color: white;
+		color: black;
 		text-align: center;
 	}
 </style>
 
 
 
-<?php  
-require "connection.php";
-$sql = "SELECT * from packages";
-$result = mysqli_query($conn, $sql);
-
-if (mysqli_num_rows($result) > 0) {
-    // output data of each row
-    while($row = mysqli_fetch_assoc($result)) {
-
-  $package_id= $row["package_id"];
-  $package_name= $row["package_name"];
-  $class_details= $row["package_details"];
-  $package_price = $row["package_price"];
- 
-
-  ?>
-
-
 <div class="container">
+
+	<h1>Membership Packages</h1>
+<hr>
+<center>
     			<div class="row_pricing">
 						<div class="col-md-4">
 						<div class="well">
-							<h3><b><?php echo "$package_name"; ?></b></h3>
+							<h3><b> Silver </b></h3>
 							<hr>
-							<p><?php echo "$package_details"; ?></p>
+							<p> Get a 2 percent discount on all bookings. </p>
 							<hr>
-							<p>$ <?php echo "$package_price"; ?></p>
+							<p>$120 </p>
 							<hr>
-							<a href="#" class="btn btn-success btn-block">Purchase</a>
 
 
 							<form action="membership_details.php" method="get">
-						<input type="text" name="membership_id" value="">
-							<input type="submit" name="select">
+						<input type="hidden" name="membership_id" value="1">
+
+						<input type="Submit" class="btn btn-success btn-block" name="purchase" value="Purchase">
 							</form>
 
 
 						</div>
 					</div>
 
-<?php
-    }
-} else {
-    echo "0 results";
-}
 
 
- ?>
+					<div class="row_pricing">
+						<div class="col-md-4">
+						<div class="well">
+							<h3><b> Gold </b></h3>
+							<hr>
+							<p> Get a 8 percent discount on all bookings. </p>
+							<hr>
+							<p>$200 </p>
+							<hr>
+							
+
+
+							<form action="membership_details.php" method="get">
+						<input type="hidden" name="membership_id" value="2">
+							<input type="Submit" class="btn btn-success btn-block" name="purchase" value="Purchase">
+							</form>
+
+
+						</div>
+					</div>
+
+				<div class="row_pricing">
+						<div class="col-md-4">
+						<div class="well">
+							<h3><b> Platinum </b></h3>
+							<hr>
+							<p> Get a 10 percent discount on all bookings. </p>
+							<hr>
+							<p>$250 </p>
+							<hr>
+							
+
+
+							<form action="membership_details.php" method="get">
+						<input type="hidden" name="membership_id" value="3">
+							<input type="Submit" class="btn btn-success btn-block" name="purchase" value="Purchase">
+							</form>
+
+
+						</div>
+					</div>
+
+
+
+					
+					<div class="row_pricing">
+						<div class="col-md-4">
+						<div class="well">
+							<h3><b> Student </b></h3>
+							<hr>
+							<p> Get a 5 percent discount on all bookings. </p>
+							<hr>
+							<p>$165 </p>
+							<hr>
+					
+
+							<form action="membership_details.php" method="get">
+						<input type="hidden" name="membership_id" value="4">
+							<input type="Submit" class="btn btn-success btn-block" name="purchase" value="Purchase">
+							</form>
+
+
+						</div>
+					</div>
+				
+
 
 </div>
-
 </div>
+</div>
+</div>
+</div>
+</div>
+</center>
 
 <?php include "Footer.php" ?>
 

@@ -7,27 +7,29 @@
 </head>
 <body>
 
+
+
+    <style>
+.footer {
+  position: relative;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: black;
+  color: white;
+  text-align: center;
+}
+</style>
+
     
+
+
 <footer>
-    
-<div class="container">
- 
-    <div class="list" id="list">
-
-    <ul>
-                
-                <li><a href="Homepage.php"> Home </a></li>
-                <li><a href="Classes.php"> Classes </a></li>
-                <li><a href="Features.php"> Features </a></li>
-                <li><a href="Registration.php"> Register</a></li>
-                <li><a href="Login.php"> Login </a></li>
-
-            </ul>
+     
     
 </div>
     
     <div class="footer" id="footerinfo">
-     
             
        <p> CONTACT INFORMATION</p>
 

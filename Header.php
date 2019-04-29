@@ -25,11 +25,13 @@
     <ul class="nav navbar-nav">
       
        <li><a href="Homepage.php">Home</a></li>
-      	<li><a href="Pricing.php"> Pricing </a></li>
+      	<li><a href="membership.php"> Packages </a></li>
 				<li><a href="Classes.php"> Classes </a></li>
 				<li><a href="Features.php"> Features </a></li>
 				<li><a href="Registration.php"> Register</a></li>
 				<li><a href="Login.php"> Login </a></li>
+       
+    
 
     </ul>
 
