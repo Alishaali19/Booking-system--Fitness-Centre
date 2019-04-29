@@ -11,7 +11,7 @@ if ($_SERVER["REQUEST_METHOD"]== "POST") {
 
 
 	$sql= "SELECT * from registration WHERE email_address = '$email_address' AND password= sha1('$password')";
-	echo $sql;
+	echo ("Please enter valid login info.");
 
 	$result = mysqli_query ($conn, $sql);
 
@@ -23,10 +23,10 @@ if ($_SERVER["REQUEST_METHOD"]== "POST") {
 			
 			$_SESSION["registration_id"] = $row["registration_id"];
 
-			header ("location: Dashboard.php");
+			header ("location: Classes.php");
 
 		}
-	} else { echo "0 results";
+	} else { echo "";
 }
 }
 
@@ -37,6 +37,21 @@ if ($_SERVER["REQUEST_METHOD"]== "POST") {
 <html>
 <head>
 	<title>Login</title>
+
+	<style type="text/css">
+		input[type=text], input[type=password], input[type=email], input[type=number]{
+    width: 20%;
+    padding: 10px;
+    margin: 8px 0 2px 0;
+    border: none;
+    background-color: white;
+    outline-color: black;
+    color: black;
+    outline: solid;
+    
+}
+
+	</style>
 </head>
 <body>
 
@@ -71,9 +86,10 @@ if ($_SERVER["REQUEST_METHOD"]== "POST") {
 </script>
 
 	<br><br>
+	<button name="confirm" class="btn btn-primary btn-large" type="submit" >Login</button>
+ <br><br>
 
-	<input type="submit" name="Login" value="Login"> <br><br>
-
+	<a href="reset_password.php"> Forgot password? </a> <br><br>
 	Don't have an account? <a href="Registration.php">Register Here!</a> <br><br>
 
 

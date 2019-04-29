@@ -1,17 +1,12 @@
 <?php include "header.php" ?>
 
-<script type="text/javascript">
-    
-
-</script>
-
-
-
 
 <?php 
 require "connection.php";
 
      if (isset($_POST['register'])) {
+        
+        //google captcha
 
         $url="https://www.google.com/recaptcha/api/siteverify";
         $secret_key="6Lc3yZcUAAAAADXoVKhMCby0SjiL5ZrkmG0pMlf6";
@@ -85,6 +80,21 @@ $dbname = "FitnessCentre";
 <html>
 <head>
     <title>Registration</title>
+
+<style type="text/css">
+    input[type=text], input[type=password], input[type=email], input[type=number]{
+    width: 20%;
+    padding: 10px;
+    margin: 8px 0 20px 0;
+    border: none;
+    background-color: white;
+    outline-color: black;
+    color: black;
+    outline: solid;
+    
+}
+</style>
+    
 </head>
 <body>
 <center>
@@ -146,7 +156,9 @@ $dbname = "FitnessCentre";
 
     <div class="g-recaptcha" data-sitekey="6Lc3yZcUAAAAAMPOPmagOjwn8pWh78KvpFTertwm"></div> <br>
 
-    <input type="Submit" name="register" value="Register">
+    
+    <button name="confirm" class="btn btn-primary btn-large" type="submit">Register</button>
+    <br><br>
 
 
  </form>
