@@ -1,3 +1,5 @@
+<?php include "header.php"; ?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -145,3 +147,5 @@ $( document ).ready(function() {
 
 </body>
 </html>
+
+<?php include "Footer.php"; ?>
