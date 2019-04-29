@@ -1,12 +1,4 @@
 <?php include "header.php" ?>
-<style type="text/css">
-	.homepage{
-		background-color: white;
-    opacity: 0.9;
-    filter: alpha(opacity= 100);
-    color: black;
-	}
-</style>
 
 <!DOCTYPE html>
 <html>
