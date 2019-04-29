@@ -156,8 +156,10 @@ $dbname = "FitnessCentre";
 
     <div class="g-recaptcha" data-sitekey="6Lc3yZcUAAAAAMPOPmagOjwn8pWh78KvpFTertwm"></div> <br>
 
+
+    <input type="submit" name="register" value="Register" class="btn btn-primary btn-large" ><br><br>
     
-    <button name="confirm" class="btn btn-primary btn-large" type="submit">Register</button>
+    
     <br><br>
 
 
